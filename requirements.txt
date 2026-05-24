@@ -1,0 +1,16 @@
+torch==2.7.1
+torchvision==0.22.1
+torchaudio==2.7.1
+
+opencv-python==4.13.0.92
+numpy==2.2.6
+pillow==10.2.0
+
+matplotlib==3.10.7
+scikit-learn==1.7.2
+pandas==2.3.3
+tqdm==4.67.3
+
+facenet-pytorch==2.6.0
+jupyter==1.1.1
+notebook==7.3.1
