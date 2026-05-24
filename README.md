@@ -7,7 +7,7 @@ This project presents a **Real-Time Emotion Recognition System** using **Deep Le
 - 📷 **Live webcam feed**
 - 🎥 **Pre-recorded video files**
 
-The system performs **face detection** using **MTCNN (Multi-task Cascaded Convolutional Networks)** and predicts emotions using multiple custom deep learning architectures built with **PyTorch**.
+The system performs **face detection using Haar Cascade during preprocessing** and **MTCNN (Multi-task Cascaded Convolutional Networks) during real-time deployment** for improved speed and accuracy. Emotion classification is performed using multiple custom deep learning architectures built with **PyTorch**.
 
 The project supports **9 emotion classes** and compares multiple deep learning models to determine the best-performing architecture for emotion recognition.
 
@@ -22,6 +22,34 @@ The main objective of this project is to:
 - Compare multiple CNN-based architectures
 - Perform inference on both webcam and video input
 - Build a GPU-accelerated real-time emotion recognition system
+
+---
+
+## 📊 Dataset
+
+This project uses a **publicly available facial emotion recognition dataset collected from Kaggle**.
+
+The dataset contains facial images categorized into the following **9 emotion classes**:
+
+- Angry
+- Content
+- Disgust
+- Fear
+- Happy
+- Neutral
+- Sad
+- SillyFace
+- Surprise
+
+### Dataset Source
+
+Kaggle Dataset Link:
+
+```text
+https://www.kaggle.com/datasets/hhshamimkhan/face-emotion-datasets
+```
+
+> Note: The complete dataset is not included in this repository due to size limitations. A small sample dataset is provided for reference.
 
 ---
 
@@ -142,31 +170,25 @@ Features:
 
 ## 📂 Dataset Structure
 
-The dataset contains **9 emotion classes**.
+This repository includes a **small sample dataset** for demonstration purposes.
 
-### Raw Dataset
-
-```text
-data/dataset/
-```
-
-Contains emotion-wise image folders.
-
-### Processed Dataset
+### Sample Dataset
 
 ```text
-data/processed/
+data/sample_dataset/
 ```
 
-The dataset is split into:
+The complete dataset is excluded due to repository size limitations.
 
-- **Train Set**
-- **Validation Set**
-- **Test Set**
+The original dataset contains:
 
-using preprocessing and data splitting notebooks.
+- Train split
+- Validation split
+- Test split
 
----
+across **9 emotion categories**.
+
+
 
 ## 📁 Project Structure
 
@@ -176,31 +198,33 @@ Real-Time-Emotion-Recognition/
 │── requirements.txt
 │
 ├── data/
-│   ├── sample dataset/
+│   ├── sample_dataset/
 │
-└──src/
-   ├── data/
-   │   ├── dataset.ipynb
-   │   ├── preprocessing.ipynb
-   │   └── split_data.ipynb
-   │
-   ├── detection/
-   │   ├── emotion_video_inference.py
-   │   ├── realtime_emotion.py
-   │   ├── deploy.prototxt
-   │   └── res10_300x300_ssd_iter_140000.caffemodel
-   │
-   ├── models/
-   │   ├── all_models.py
-   │   └── best_model.pth
-   │
-   ├── input_videos/
-   ├── output_videos/
-   │
-   └── training/
-       ├── train.ipynb
-       └── models/
-           └── final_best_model.pth
+└── src/
+    ├── __init__.py
+    │
+    ├── data/
+    │   ├── dataset.ipynb
+    │   ├── preprocessing.ipynb
+    │   └── split_data.ipynb
+    │
+    ├── detection/
+    │   ├── emotion_video_inference.py
+    │   ├── realtime_emotion.py
+    │   ├── deploy.prototxt
+    │   └── res10_300x300_ssd_iter_140000.caffemodel
+    │
+    ├── models/
+    │   ├── all_models.py
+    │   └── best_model.pth
+    │
+    ├── input_videos/
+    ├── output_videos/
+    │
+    └── training/
+        ├── train.ipynb
+        └── models/
+            └── final_best_model.pth
 
 ```
 
